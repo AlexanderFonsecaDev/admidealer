@@ -1,100 +1,178 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.invited')
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+@section('content')
+    <!-- Main -->
+    <div id="main">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="{{ asset('images/slider-image-1-1920x700.jpg') }}" alt="First slide">
                 </div>
-            @endif
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{ asset('images/slider-image-2-1920x700.jpg') }}" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{ asset('images/slider-image-3-1920x700.jpg') }}" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+        <br>
+        <br>
+
+        <div class="inner">
+            <!-- About Us -->
+            <header id="inner">
+                <h1 class="text-danger">USED CAR!</h1>
+                <p>
+                    An optimal and ideal dealership for the general public, we process everything necessary and in a simple way, delear fees and with the lowest fees compared to the competition!
+                </p>
+            </header>
+
+            <br>
+
+            <h2 class="h2 text-danger">Featured Cars</h2>
+
+            <!-- Cars -->
+            <section class="tiles">
+                <article class="style1">
+									<span class="image">
+										<img src="{{ asset('images/sell/auto10.jpg') }}" alt="" />
+									</span>
+                    <a href="cars.html">
+                        <h2>Kia sorento</h2>
+
+                        <!--<p><del>$11 999</del> <strong>$11 779</strong></p>-->
+
+                        <p>
+                            <i class="fa fa-dashboard"></i> 124.000 miles
+                            <i class="fa fa-cube"></i> year 2006
+                        </p>
+                    </a>
+                </article>
+                <article class="style2">
+									<span class="image">
+										<img src="{{ asset('images/sell/auto2_2.jpg') }}" alt="" />
+									</span>
+                    <a href="cars.html">
+                        <h2>
+                            Saturn Vue
+                        </h2>
+
+                        <!--<p><del>$11 999</del> <strong>$11 779</strong></p>-->
+
+                        <p>
+                            <i class="fa fa-dashboard"></i> 123.000 miles
+                            <i class="fa fa-cube"></i> year 2007
+                        </p>
+                    </a>
+                </article>
+                <article class="style3">
+									<span class="image">
+										<img src="{{ asset('images/sell/auto3.jpg') }}" alt="" />
+									</span>
+                    <a href="cars.html">
+                        <h2>
+                            Chrysler town & country
+                        </h2>
+
+                        <!--<p><del>$11 999</del> <strong>$11 779</strong></p>-->
+
+                        <p>
+                            <i class="fa fa-dashboard"></i> 156.000 miles
+                            <i class="fa fa-cube"></i> year 2006
+                        </p>
+                    </a>
+                </article>
+
+                <article class="style4">
+									<span class="image">
+										<img src="{{ asset('images/sell/auto4.jpg') }}" alt="" />
+									</span>
+                    <a href="cars.html">
+                        <h2>
+                            Chrysler pacífica
+                        </h2>
+
+                        <!--<p><del>$11 999</del> <strong>$11 779</strong></p>-->
+
+                        <p>
+                            <i class="fa fa-dashboard"></i> 176.000 miles &nbsp;&nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-cube"></i> year 2005&nbsp;&nbsp;&nbsp;&nbsp;
+                        </p>
+                    </a>
+                </article>
+
+                <article class="style5">
+									<span class="image">
+										<img src="{{ asset('images/sell/auto5.jpg') }}" alt="" />
+									</span>
+                    <a href="cars.html">
+                        <h2>
+                            Dodge caliber
+                        </h2>
+
+                        <!--<p><del>$11 999</del> <strong>$11 779</strong></p>-->
+
+                        <p>
+                            <i class="fa fa-dashboard"></i> 148.000 miles &nbsp;&nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-cube"></i> year 2007&nbsp;&nbsp;&nbsp;&nbsp;
+                        </p>
+                    </a>
+                </article>
+
+                <article class="style6">
+									<span class="image">
+										<img src="{{ asset('images/sell/auto6_1.jpeg') }}" alt="" />
+									</span>
+                    <a href="cars.html">
+                        <h2>
+                            Lorem ipsum dolor sit amet, consectetur
+                        </h2>
+
+                        <!--<p><del>$11 999</del> <strong>$11 779</strong></p>-->
+
+                        <p>
+                            <i class="fa fa-dashboard"></i> 130 000km &nbsp;&nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-cube"></i> 1800 cc&nbsp;&nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-cog"></i> Manual
+                        </p>
+                    </a>
+                </article>
+            </section>
+
+            <p class="text-center"><a href="cars.html">View Cars &nbsp;<i class="fa fa-long-arrow-right"></i></a></p>
+
+            <br>
+
+            <h2 class="h2">Testimonials</h2>
+
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <p class="m-n"><em>"Ayudan mucho a la gente, se pueden sacar autos sin tanto complique y sin buen credito"</em></p>
+
+                    <p><strong> - Elizabeth Acoosta</strong></p>
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="col-sm-6 text-center">
+                    <p class="m-n"><em>"Very happy with Wichy's Car LLC great customer service fast and organized I couldn’t have picked a better place, Thanks🙂"</em></p>
+
+                    <p><strong>- xiomara tibaduiza</strong> </p>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+@endsection
