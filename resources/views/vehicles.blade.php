@@ -200,110 +200,25 @@
 
             <!-- Cars -->
             <section class="tiles">
-                <article class="style1">
+
+                @if (count($cars) > 0)
+                    @foreach ($cars as $car)
+                        <article class="style1">
 									<span class="image">
-										<img src="images/sell/auto10.jpg" alt="" />
+										<img src="{{ $car->photos()->first()->url }} " alt="" />
 									</span>
-                    <a href="cars.html">
-                        <h2>Kia sorento</h2>
+                            <a href="{{ route('cars.show',$car->id) }}">
+                                <h2>{{ $car->title }}</h2>
 
-                        <!--<p><del>$11 999</del> <strong>$11 779</strong></p>-->
+                                <!--<p><del>$11 999</del> <strong>$11 779</strong></p>-->
 
-                        <p>
-                            <i class="fa fa-dashboard"></i> 124.000 miles
-                            <i class="fa fa-cube"></i> year 2006
-                        </p>
-                    </a>
-                </article>
-                <article class="style2">
-									<span class="image">
-										<img src="images/sell/auto2_2.jpg" alt="" />
-									</span>
-                    <a href="cars.html">
-                        <h2>
-                            Saturn Vue
-                        </h2>
-
-                        <!--<p><del>$11 999</del> <strong>$11 779</strong></p>-->
-
-                        <p>
-                            <i class="fa fa-dashboard"></i> 123.000 miles
-                            <i class="fa fa-cube"></i> year 2007
-                        </p>
-                    </a>
-                </article>
-                <article class="style3">
-									<span class="image">
-										<img src="images/sell/auto3.jpg" alt="" />
-									</span>
-                    <a href="cars.html">
-                        <h2>
-                            Chrysler town & country
-                        </h2>
-
-                        <!--<p><del>$11 999</del> <strong>$11 779</strong></p>-->
-
-                        <p>
-                            <i class="fa fa-dashboard"></i> 156.000 miles
-                            <i class="fa fa-cube"></i> year 2006
-                        </p>
-                    </a>
-                </article>
-
-                <article class="style4">
-									<span class="image">
-										<img src="images/sell/auto4.jpg" alt="" />
-									</span>
-                    <a href="cars.html">
-                        <h2>
-                            Chrysler pacífica
-                        </h2>
-
-                        <!--<p><del>$11 999</del> <strong>$11 779</strong></p>-->
-
-                        <p>
-                            <i class="fa fa-dashboard"></i> 176.000 miles &nbsp;&nbsp;&nbsp;&nbsp;
-                            <i class="fa fa-cube"></i> year 2005&nbsp;&nbsp;&nbsp;&nbsp;
-                        </p>
-                    </a>
-                </article>
-
-                <article class="style5">
-									<span class="image">
-										<img src="images/sell/auto5.jpg" alt="" />
-									</span>
-                    <a href="cars.html">
-                        <h2>
-                            Dodge caliber
-                        </h2>
-
-                        <!--<p><del>$11 999</del> <strong>$11 779</strong></p>-->
-
-                        <p>
-                            <i class="fa fa-dashboard"></i> 148.000 miles &nbsp;&nbsp;&nbsp;&nbsp;
-                            <i class="fa fa-cube"></i> year 2007&nbsp;&nbsp;&nbsp;&nbsp;
-                        </p>
-                    </a>
-                </article>
-
-                <article class="style6">
-									<span class="image">
-										<img src="images/sell/auto6_1.jpeg" alt="" />
-									</span>
-                    <a href="cars.html">
-                        <h2>
-                            Lorem ipsum dolor sit amet, consectetur
-                        </h2>
-
-                        <!--<p><del>$11 999</del> <strong>$11 779</strong></p>-->
-
-                        <p>
-                            <i class="fa fa-dashboard"></i> 130 000km &nbsp;&nbsp;&nbsp;&nbsp;
-                            <i class="fa fa-cube"></i> 1800 cc&nbsp;&nbsp;&nbsp;&nbsp;
-                            <i class="fa fa-cog"></i> Manual
-                        </p>
-                    </a>
-                </article>
+                                <p>
+                                    <i class="fa fa-dashboard"></i> {{ $car->mileage }} miles
+                                </p>
+                            </a>
+                        </article>
+                    @endforeach
+                @endif
             </section>
         </div>
     </div>

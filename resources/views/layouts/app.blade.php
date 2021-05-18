@@ -18,6 +18,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 </head>
 <body>
     <div id="app">
@@ -71,6 +74,13 @@
                 </div>
             </div>
         </nav>
+
+        @if (session()->has('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}!!
+            </div>
+        @endif
+
 
         <main class="py-4">
             @yield('content')

@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return \Illuminate\Support\Facades\Auth::check() ? redirect()->route('home') : view('welcome');
 })->name('start');
+
 
 Auth::routes();
 
@@ -30,3 +31,9 @@ Route::get('/faq','InvitedController@faq')->name('faq');
 Route::get('/terms','InvitedController@terms')->name('terms');
 
 Route::get('/contact','InvitedController@contact')->name('contact');
+
+Route::resource('cars','CarController')->except('show')->middleware('auth');
+
+Route::get('cars/{car}','CarController@show')->name('cars.show');
+
+Route::delete('photo/{photo}','CarController@deletePhotoCar')->name('delete.photo');
